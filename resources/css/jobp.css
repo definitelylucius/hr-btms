@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f8ff; /* Light blue with a white-ish hue */
+    color: #1F2936; /* Dark gray for better contrast */
+    font-family: 'Arial', sans-serif; /* Example font, replace as needed */
+    margin: 0;
+    padding: 0
+    
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg,#1F2936 0%, #1F2936 100%);
+}
+
+.navbar-item {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    background-color: #1F2936;
+    transition: all 0.3s ease;
+}
+
+.navbar-item:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.btn-primary {
+    background-color:#1F2936;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1F2936;
+    transform: translateY(-2px);
+    box-shadow: #1F2936;
+}
+
+.bg-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(#1F2936);
+    animation: animateBackground 20s linear infinite;
+}
+
+.bg-animation::before,
+.bg-animation::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #1F2936;
+    animation: circulate 4s linear infinite;
+}
+
+.bg-animation::before {
+    top: 20%;
+    left: 30%;
+}
+
+.bg-animation::after {
+    top: 50%;
+    left: 70%;
+}
+
+@keyframes animateBackground {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes circulate {
+    0% {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+
+    25% {
+        transform: translateX(50px) translateY(-50px) scale(1.2);
+    }
+
+    50% {
+        transform: translateX(100px) translateY(0) scale(1);
+    }
+
+    75% {
+        transform: translateX(50px) translateY(50px) scale(1.2);
+    }
+
+    100% {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+}
+
+.section-heading {
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    bottom: -10px;
+    left: 25%;
+    background-color: #1F2936;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-bar {
+    height: 8px;
+    background-color:#1F2936;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    width: 0;
+    background-color:#1F2936;
+}
